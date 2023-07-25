@@ -1,0 +1,36 @@
+
+<div class="table table-hover container">
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of dataArray">
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.message }}</td>
+        <button class="btn btn-danger" (click)="delete(item.id)">Delete</button>
+      
+
+        <!-- <td>
+          <span *ngIf="item.status === true" style="color: red;">Open</span>
+          <span *ngIf="item.status === false" style="color: green;">Resolved</span>
+        </td>
+        <td>
+          <div>
+            <span>Edit status</span>
+            <select [(ngModel)]="item.status">
+              <option [ngValue]="true" >Open</option>
+              <option [ngValue]="false" >Resolved</option>
+            </select>
+            <button (click)="updateData(item.id, item)">Save</button>
+          </div>
+        </td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>

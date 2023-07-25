@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Data } from '../interfaces/data';
 import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +12,10 @@ import { DataService } from '../services/data.service';
 export class HomeComponent implements OnInit {
   myForm!: FormGroup;
 
-  constructor(private fb: FormBuilder,private dataService:DataService) { }
+  constructor(private fb: FormBuilder,private dataService:DataService,private router:Router) { }
 
   ngOnInit() {
+    this.dataService.getAll();
     this.myForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -26,6 +28,8 @@ export class HomeComponent implements OnInit {
       const data: Data = this.myForm.value
       console.log('data',data);
       this.dataService.addData(data)
+      this.myForm.reset();
+      this.router.navigate(['/all'])
       // You can perform further actions here, e.g., sending the data to a server.
     }
   }
