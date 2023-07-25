@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angularfirebasecrud-19e18": {
+      "hosting": {
+        "firebaseCrud": [
+          "angularfirebasecrud-19e18"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angularfirebasecrud-19e18"
+  }
+}
