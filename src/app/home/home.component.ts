@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
   onSubmit() {
     if (this.myForm.valid) {
       const data: Data = this.myForm.value
-      console.log('data',data);
       this.dataService.addData(data)
       this.myForm.reset();
       this.router.navigate(['/all'])

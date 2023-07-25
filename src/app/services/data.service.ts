@@ -27,18 +27,20 @@ export class DataService {
   }
 
   addData(data: any) {
+    data.date = this.getCurrentDateTime();
     return this.db.collection('data').add(data).then(() => {
-      alert("your answer is saved succesfully")
+      alert("Your data is saved succesfully")
     })
       .catch((error) => {
-        alert('Error adding question');
+        alert('Error adding data');
         console.error('Error adding question:', error);
       });
   }
 
- 
+
 
   deleteItem(itemId: string): Promise<void> {
+    alert("Data deleted successfully")
     return this.itemsCollection.doc(itemId).delete();
   }
 

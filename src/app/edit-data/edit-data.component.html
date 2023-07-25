@@ -1,5 +1,7 @@
-<div *ngFor="let item of dataArray">
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+<div *ngFor="let item of dataArray" class="container mt-5">
+
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" *ngIf="item.id == currentId">
+        <h4 class="d-flex justify-content-center">Edit data</h4>
         <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" id="name" class="form-control" formControlName="name" [(ngModel)]="item.name">

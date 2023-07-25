@@ -14,7 +14,7 @@ export class EditDataComponent implements OnInit {
   myForm!: FormGroup;
   currentId!: any;
 
-  constructor(private fb: FormBuilder, private dataService: DataService, private router: Router, private route: ActivatedRoute) { 
+  constructor(private fb: FormBuilder, private dataService: DataService, private router: Router, private route: ActivatedRoute) {
     this.myForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
@@ -22,21 +22,15 @@ export class EditDataComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    
-    debugger
     this.currentId = this.route.snapshot.params['id']
     if (this.currentId) {
-
       this.dataService.getAll().then(() => this.dataArray = this.dataService.dataArray)
     }
-    console.log(this.dataArray);
-
   }
 
   onSubmit() {
     if (this.myForm.valid) {
       const data: Data = this.myForm.value
-      console.log('data', data);
       this.dataService.updateItem(this.currentId, data)
       this.myForm.reset();
       this.router.navigate(['/all'])
