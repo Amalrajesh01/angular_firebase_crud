@@ -1,31 +1,6 @@
-<!-- reactive-form.component.html -->
 
-<div class="container mt-5">
-  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" id="name" class="form-control" formControlName="name">
-      <!-- <div class="invalid-feedback" *ngIf="myForm.get('name').invalid" >
-        Please enter a valid name.
-      </div> -->
-    </div>
 
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" class="form-control" formControlName="email">
-      <!-- <div class="invalid-feedback" *ngIf="myForm.get('email').invalid">
-        Please enter a valid email address.
-      </div> -->
-    </div>
-
-    <div class="form-group">
-      <label for="message">Message:</label>
-      <textarea id="message" class="form-control" formControlName="message"></textarea>
-      <!-- <div class="invalid-feedback" *ngIf="myForm.get('message').invalid" >
-        Please enter a message.
-      </div> -->
-    </div>
-
-    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
-  </form>
+<div class="d-flex justify-content-center mt-5">
+  <button class="btn btn-primary mx-3" [routerLink]="['/add']">ADD DATA</button>
+  <button class="btn btn-success mx-3" [routerLink]="['/all']">VIEW DATA</button>
 </div>

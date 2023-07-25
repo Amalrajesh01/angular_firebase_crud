@@ -14,6 +14,7 @@
         <td>{{ item.email }}</td>
         <td>{{ item.message }}</td>
         <button class="btn btn-danger" (click)="delete(item.id)">Delete</button>
+        <button class="btn btn-success"  [routerLink]="['/edit', item.id]">Update</button>
       
 
         <!-- <td>

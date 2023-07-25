@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AllDataComponent } from './all-data/all-data.component';
+import { AddDataComponent } from './add-data/add-data.component';
+import { EditDataComponent } from './edit-data/edit-data.component';
 
 
 @NgModule({
@@ -18,6 +20,8 @@ import { AllDataComponent } from './all-data/all-data.component';
     AppComponent,
     HomeComponent,
     AllDataComponent,
+    AddDataComponent,
+    EditDataComponent,
   
   ],
   imports: [

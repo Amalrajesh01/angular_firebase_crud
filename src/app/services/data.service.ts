@@ -26,7 +26,7 @@ export class DataService {
     );
   }
 
-  addData(data: Data) {
+  addData(data: any) {
     return this.db.collection('data').add(data).then(() => {
       alert("your answer is saved succesfully")
     })
