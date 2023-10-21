@@ -1,22 +1,43 @@
-<div *ngFor="let item of dataArray" class="container mt-5">
+<div class="area">
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
 
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" *ngIf="item.id == currentId">
-        <h4 class="d-flex justify-content-center">Edit data</h4>
-        <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" class="form-control" formControlName="name" [(ngModel)]="item.name">
+
+        <div *ngFor="let item of dataArray" class="container" style="margin-left: 15%;margin-top: 14%;">
+
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()" *ngIf="item.id == currentId">
+                <h4 class="d-flex justify-content-center">Edit data</h4>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" class="form-control" formControlName="name" [(ngModel)]="item.name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="form-control" formControlName="email"
+                        [(ngModel)]="item.email">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" class="form-control" formControlName="message"
+                        [(ngModel)]="item.message"></textarea>
+                </div>
+
+                <button type="submit" style="margin-left: 25%;width: 50%; margin-top: 5%; height: 9%;"
+                    class="btn btn-light" [disabled]="myForm.invalid">Submit</button>
+            </form>
         </div>
 
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" class="form-control" formControlName="email" [(ngModel)]="item.email">
-        </div>
 
-        <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea id="message" class="form-control" formControlName="message" [(ngModel)]="item.message"></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
-    </form>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 </div>
